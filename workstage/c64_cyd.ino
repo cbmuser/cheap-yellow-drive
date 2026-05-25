@@ -921,19 +921,6 @@ void loop() {
 
     if (currentState != STATE_TRANSFER) {
         handleTouch();
-
-    
-          static unsigned long soundStart = 0;
-    if (digitalRead(4) == HIGH) { // Wenn der Verstärker gerade an ist
-        if (soundStart == 0) soundStart = millis();
-        if (millis() - soundStart > 12) { // Nach 12 ms (10 ms Ton + 2 ms Puffer)
-            digitalWrite(4, LOW);          // Verstärker stumm schalten
-            soundStart = 0;
-        }
-    }
-
-
-    
     }
 
     if (currentState == STATE_IDLE) {
