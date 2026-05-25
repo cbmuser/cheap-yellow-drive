@@ -187,21 +187,11 @@ void generateC64DirectoryListing() {
     // Der finale Zeiger auf die "nächste Zeile" muss 0x0000 sein       
     prgbuffer[byte_counter++] = 0x00;
     prgbuffer[byte_counter++] = 0x00;
-
     read_pointer = 0;
-
-
-    
-        
     currentState = STATE_TRANSFER; 
     current_filename = "$";
 }
 
-
-
-
-
-// --- COMMODORE LOGO ZEICHNEN ---
 void drawCommodoreLogo(int x, int y) {
     tft.fillCircle(x + 25, y + 40, 35, CBM_BLUE);
     tft.fillCircle(x + 23, y + 40, 35, CBM_BLUE); 
@@ -220,7 +210,7 @@ void drawCommodoreLogo(int x, int y) {
 }
 
 // =========================================================================
-// Layout Hauptbildschirm
+// Main Layout
 // =========================================================================
 void updateDisplay(String status, String filename, String details) {
     tft.fillScreen(TFT_BLACK);
